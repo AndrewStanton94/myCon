@@ -1,0 +1,43 @@
+#!/bin/bash
+myCon="${HOME}/Downloads/myCon"
+downloads="${HOME}/Downloads"
+
+function getLibevent {
+	echo "Installing tmux dependency: libevent"
+	libeventDownload="${downloads}/libevent" &&
+	# git clone https://github.com/libevent/libevent.git "${libeventDownload}" &&
+	cd "${libeventDownload}" &&
+	sh autogen.sh &&
+	./configure &&
+	make &&
+	# make varify &&
+	sudo make install ||
+	echo "libevent failed to install" &&
+	return 1
+}
+
+function getNCURSES {
+	echo "Installing tmux dependency: NCURSES"
+	cd "${downloads}" &&
+	wget ftp://invisible-island.net/ncurses/ncurses.tar.gz &&
+	tar zxvf ncurses.tar.gz &&
+	cd ncurses* &&
+	./configure &&
+	make &&
+	sudo make install ||
+	echo "ncurses failed to install" &&
+	return 2
+}
+
+function getTmux {
+	echo "Installing tmux" 
+	tmuxDownload="${downloads}/tmux" &&
+	# git clone https://github.com/tmux/tmux.git "${tmuxDownload}" &&
+	# cd "${tmuxDownload}" &&
+	sh autogen.sh &&
+	./configure &&
+	make &&
+	sudo make install ||
+	echo "tmux failed to install" &&
+	return 3
+}

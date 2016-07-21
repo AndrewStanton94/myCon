@@ -6,3 +6,9 @@ vim
 vim-gnome
 vim-doc
 ctags
+# For building libevent
+automake
+libtool
+build-essential
+# For tmux
+pkg-config
