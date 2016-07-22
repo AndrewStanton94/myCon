@@ -1,0 +1,10 @@
+# This is the list of prgrams to install.
+# Comment lines start with #
+git
+gitk
+vim
+vim-gnome
+vim-doc
+ctags
+zsh
+zsh-doc

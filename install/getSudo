@@ -1,0 +1,3 @@
+#!/bin/bash
+su --command "apt install sudo"
+echo "sudo has now been installed. Ensure that you are a sudoer and have logged in again to get permissions applied."

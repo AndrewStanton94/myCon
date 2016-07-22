@@ -1,0 +1,11 @@
+#!/bin/bash
+# This updates repo data and upgrades existing.
+# It then installs programs in the programList file. Ignoring commented lines.
+
+myCon=$HOME/Downloads/myCon
+programList=$myCon/configs/programList
+echo ${programList}
+
+sudo apt update
+sudo apt dist-upgrade
+grep -E "^[^#]" $programList | sudo xargs apt --yes install
