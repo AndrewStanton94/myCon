@@ -4,6 +4,11 @@
 # base path of my config
 myCon=$HOME/Downloads/myCon
 
+function zz {
+	echo "Reloading zshrc"
+	. ~/.zshrc
+}
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
