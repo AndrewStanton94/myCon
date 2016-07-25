@@ -1,0 +1,11 @@
+#!/bin/bash
+myCon="${HOME}/Downloads/myCon"
+tmuxConf="${HOME}/.tmux.conf"
+
+function getTmux {
+	if [ -f "${tmuxConf}" ]; then
+		echo "A tmux conf file already exists"
+	else
+		ln -s "${myCon}/configs/.tmux.conf" "${tmuxConf}"
+	fi
+}
