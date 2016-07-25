@@ -1,0 +1,11 @@
+#!/bin/bash
+theme="${HOME}/Downloads/arc-theme-Red"
+
+function getUITheme {
+	git clone https://github.com/mclmzz/arc-theme-Red --depth 1 "${theme}"
+	cd "${theme}"
+	./autogen.sh --prefix=/usr
+	sudo make install
+
+	echo "Now use tweak tool to set the themes to Arc-Red-Darker"
+}
