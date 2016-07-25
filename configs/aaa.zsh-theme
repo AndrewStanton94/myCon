@@ -24,12 +24,15 @@ else
 fi
 
 . "${myCon}/configs/zshDefinitions.zsh"
+. "${myCon}/lib/git_tools.zsh"
+. "${myCon}/lib/git_remote.zsh"
 
 local return_code="%(?..%F{red}%? ↵%f)"
 local user_host="${PR_USER}%F{cyan}@${PR_HOST}"
 local current_dir="%B%F{blue}%~%f%b"
-local git_branch="$(git_prompt_info)$(git_prompt_status)$(git_remote_status)"
 
-PROMPT="╭─<${user_host}─[${current_dir}]>─${git_branch}
+local git_prompt='$(draw_git_branch_state)$(a_git_prompt_status)$(git_remote_status)'
+
+PROMPT="╭─<${user_host}─[${current_dir}]>─${git_prompt}
 ╰─<$(getJobs) $PR_PROMPT "
 RPROMPT="${return_code}"
