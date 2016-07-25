@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/andrew/.oh-my-zsh
 
+if [ "${TERM}" = "xterm" ]; then
+	export TERM=xterm-256color
+fi
+
 # base path of my config
 myCon=$HOME/Downloads/myCon
 
