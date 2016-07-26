@@ -9,6 +9,8 @@ fi
 myCon=$HOME/Downloads/myCon
 
 . "${myCon}/lib/ta.zsh"
+. "${myCon}/lib/c"
+
 function zz {
 	echo "Reloading zshrc"
 	. ~/.zshrc
