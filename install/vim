@@ -7,7 +7,7 @@ function getVim {
 	if [ -f "${vimrc}" ]; then
 		echo "A .vimrc file already exists"
 	else
-		ln -s "${myCon}/configs/.vimrc" "${zshrc}"
+		ln -s "${myCon}/configs/.vimrc" "${vimrc}"
 	fi
 	vim +PluginInstall +qall
 }
