@@ -8,6 +8,7 @@ fi
 # base path of my config
 myCon=$HOME/Downloads/myCon
 
+. "${myCon}/lib/ta.zsh"
 function zz {
 	echo "Reloading zshrc"
 	. ~/.zshrc
