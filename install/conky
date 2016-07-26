@@ -2,7 +2,7 @@
 myCon="${HOME}/Downloads/myCon"
 conkyrc="${HOME}/.conkyrc"
 
-function getTmux {
+function getConky {
 	if [ -f "${conkyrc}" ]; then
 		echo "A tmux conf file already exists"
 	else
