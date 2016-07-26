@@ -48,5 +48,3 @@ isModern() {
         fi
     fi
 }
-
-ta
