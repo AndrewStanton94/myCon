@@ -24,9 +24,9 @@ set fileformat=unix
 set tabstop=4       " The width of a TAB is set to 4.  Still it is a \t. It is just that Vim will interpret it to be having a width of 4.
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
-" set expandtab       " Spaces are better than a tab character
 if !has('nvim')
 	set smarttab
+	set autoindent
 endif
 "}}}
 
@@ -39,10 +39,6 @@ set smartcase
 set wrapscan
 "}}}
 
-if !has('nvim')
-	set autoindent
-endif
-
 "{{{
 set cursorline
 set cursorcolumn
@@ -50,13 +46,12 @@ set colorcolumn=80
 hi ColorColumn ctermbg=darkred
 "}}}
 
-if !has('nvim')
-	set laststatus=2
-endif
 set ruler
 if !has('nvim')
+	set laststatus=2
 	set wildmenu
 	set autoread                  " watch for file changes
+	set backspace=indent,eol,start
 endif
 set wildmode=longest,full
 set ignorecase
@@ -67,10 +62,6 @@ set showcmd
 " filetype indent on            " Enable filetype-specific indenting
 " filetype plugin on            " Enable filetype-specific plugins
 syntax enable
-
-if !has('nvim')
-	set backspace=indent,eol,start
-endif
 
 set guioptions-=T
 set guioptions-=e
