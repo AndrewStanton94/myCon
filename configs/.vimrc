@@ -182,7 +182,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-obsession.git'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-perl/vim-perl.git'
-" Plugin 'vim-scripts/taglist.vim.git'
 Plugin 'gaosld/vim-scripts-taglist'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -197,6 +196,9 @@ Plugin 'pkukulak/idle'
 
 Plugin 'tpope/vim-jdaddy'
 Plugin 'https://github.com/edsono/vim-matchit.git'
+
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'https://github.com/leafgarland/typescript-vim.git'
 
 
 if has('unix')
