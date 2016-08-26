@@ -99,7 +99,7 @@ noremap k gk
 noremap Y y$
 noremap <F1> :h <C-r><C-w><CR>
 noremap <F2> :e $MYVIMRC<CR>
-noremap <S-F2> :so $MYVIMRC<CR>:echo "Config reloaded"<CR>
+nnoremap <F3> :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
 noremap <F8> :Explore<CR>
 noremap <F9> :TlistToggle<CR>
 
@@ -107,18 +107,6 @@ noremap <Left> <C-w>h
 noremap <Right> <C-w>l
 noremap <Up> <C-w>k
 noremap <Down> <C-w>j
-noremap <S-Left> <C-w>H
-noremap <S-Right> <C-w>L
-noremap <S-Up> <C-w>K
-noremap <S-Down> <C-w>J
-noremap <c-Left> :tabNext<CR>
-noremap <c-Right> :tabnext<CR>
-noremap <c-Tab> :tabnext<CR>
-noremap <c-Up> :tabnew<CR>
-noremap <c-Down> <C-w>c
-
-noremap <C-S-Up> ddkP
-noremap <C-S-Down> ddp
 
 noremap <leader>p "+p
 noremap <space> za
@@ -130,12 +118,7 @@ vnoremap > >gv
 cmap w!! w !sudo tee > /dev/null %
 
 iabbrev #C Copyright <C-r>=strftime("%Y")<CR> Smoothwall Ltd.
-cabbrev W w!
-cabbrev E e!
 "}}}
-
-
-cd $HOME
 
 if !has('nvim')
 	set mouse=a
