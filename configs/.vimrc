@@ -173,7 +173,8 @@ Plugin 'https://github.com/edsono/vim-matchit.git'
 
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/leafgarland/typescript-vim.git'
-
+Plugin 'https://github.com/Quramy/tsuquyomi.git'
+Plugin 'https://github.com/Shougo/vimproc.vim'
 
 if has('unix')
 		" "				" Syntastic - Perl Checker Settings
@@ -228,6 +229,12 @@ let Tlist_Show_Menu = 1		"Gvim
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 40
 "}}}
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
 "}}}
 
 " colorscheme harlequin
