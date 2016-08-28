@@ -78,11 +78,6 @@ autocmd BufEnter * setlocal relativenumber
 autocmd BufEnter * setlocal number
 autocmd BufLeave * setlocal norelativenumber
 autocmd BufLeave * setlocal nonumber
-
-autocmd BufRead log.txt* setlocal syntax=log4net
-
-autocmd FileType perl set makeprg=perl\ -c\ %\ $*
-autocmd FileType perl set errorformat=%f:%l:%m
 "}}}
 
 "{{{ Mappings
