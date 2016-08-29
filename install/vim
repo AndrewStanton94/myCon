@@ -1,6 +1,8 @@
 #!/bin/bash
 myCon="${HOME}/Downloads/myCon"
 vimrc="${HOME}/.vimrc"
+ftdetectRelPath="/.vim/ftdetect"
+ftdetect="${HOME}${ftdetectRelPath}"
 
 function getVim {
 	git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"
@@ -9,5 +11,12 @@ function getVim {
 	else
 		ln -s "${myCon}/configs/.vimrc" "${vimrc}"
 	fi
+
+	if [ -d "${ftdetect}" ]; then
+		echo "A ftdetect dir already exists"
+	else
+		ln -s "${myCon}/configs/${ftdetectRelPath}" "${ftdetect}"
+	fi
 	vim +PluginInstall +qall
+	cd "${HOME}/.vim/bundle/vimproc.vim" && make || echo "Issue with building vimproc"
 }
