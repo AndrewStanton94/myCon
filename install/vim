@@ -1,15 +1,21 @@
 #!/bin/bash
 myCon="${HOME}/Downloads/myCon"
 vimrc="${HOME}/.vimrc"
+vundlePath="${HOME}/.vim/bundle/Vundle.vim"
 ftdetectRelPath="/.vim/ftdetect"
 ftdetect="${HOME}${ftdetectRelPath}"
 
 function getVim {
-	git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"
 	if [ -f "${vimrc}" ]; then
 		echo "A .vimrc file already exists"
 	else
 		ln -s "${myCon}/configs/.vimrc" "${vimrc}"
+	fi
+
+	if [ -d "${vundlePath}" ]; then
+		echo "We already have vundle, moving on"
+	else
+		git clone https://github.com/VundleVim/Vundle.vim.git "${vundlePath}" && echo "vundle installed"
 	fi
 
 	if [ -d "${ftdetect}" ]; then
