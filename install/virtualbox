@@ -1,0 +1,12 @@
+#!/bin/bash
+myCon="${HOME}/Downloads/myCon"
+getVirtualbox(){
+	sudo apt update && sudo apt dist-upgrade
+	sudo m-a prepare;
+	echo "Pre-requisites completed"
+	echo "Insert the guest additions CD"
+	echo "If it doesn't run automatically"
+	echo "\tRun mount /media/cdrom"
+	echo "\tRun sh /media/cdrom/VBoxLinuxAdditions.run"
+	echo "Restart to apply changes"
+}
