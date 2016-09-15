@@ -8,12 +8,13 @@ vim-doc
 ctags
 zsh
 zsh-doc
+curl
+conky
 # Required for ui theme
 autoconf
 automake
 automake
 libgtk-3-dev
-conky
 # for virtualbox extras
 build-essential
 module-assistant
