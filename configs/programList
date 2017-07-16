@@ -18,3 +18,8 @@ libgtk-3-dev
 # for virtualbox extras
 build-essential
 module-assistant
+# For building nodejs
+clang
+libssl-dev
+#Yarn
+apt-transport-https

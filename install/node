@@ -1,0 +1,17 @@
+#!/bin/bash
+
+nodeTar="${HOME}/Downloads/node.tar.gz"
+
+function getNode {
+	if [ -f "${nodeTar}" ]; then
+		tar -xvf ${nodeTar}
+		cd ~/Downloads/node*/
+		./configure
+		make -j4
+		sudo make install
+		node -v
+	else
+		echo "Get the source from https://nodejs.org/en/download/current/"
+		echo "Save as ${nodeTar}"
+	fi
+}
