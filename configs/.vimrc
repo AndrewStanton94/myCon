@@ -171,6 +171,8 @@ Plugin 'https://github.com/leafgarland/typescript-vim.git'
 Plugin 'https://github.com/Quramy/tsuquyomi.git'
 Plugin 'https://github.com/Shougo/vimproc.vim'
 
+Plugin 'mtscout6/syntastic-local-eslint.vim'
+
 if has('unix')
 		" "				" Syntastic - Perl Checker Settings
 		let g:syntastic_enable_perl_checker = 1
@@ -202,10 +204,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_balloons = 1
-let g:syntastic_mode_map = {
-    \ "active_filetypes" : [],
+let g:syntastic_mode_map = { 'mode': 'active',
+    \ "active_filetypes" : ['javascript'],
     \ "passive_filetypes" : []
 \ }
+let g:syntastic_javascript_checkers = ['eslint']
 let g:airline#extensions#syntastic#enabled = 1
 "}}}
 
