@@ -10,6 +10,7 @@ zsh
 zsh-doc
 curl
 conky
+tmux
 # Required for ui theme
 autoconf
 automake
@@ -23,3 +24,5 @@ clang
 libssl-dev
 #Yarn
 apt-transport-https
+# Authentication for mongo to be installed
+dirmngr
